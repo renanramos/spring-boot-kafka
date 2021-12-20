@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Consumer {
 
-	@KafkaListener(topics = "hobbit", groupId = "group_id")
-	public void consumeHobbitQuotes(final ConsumerRecord<Integer, String> record) {
-		log.info("Received from {}: {}",record.topic(), record.value());
+	@KafkaListener(topics = "streams-wordcount-output", groupId = "group_id")
+	public void consumeHobbitQuotes(final ConsumerRecord<String, Long> record) {
+		log.info("Received from topic: {} | word: '{}' and value: {}", record.topic(), record.key(), record.value());
 	}
 }
