@@ -19,4 +19,9 @@ public class SpringKafkaApplication {
 	NewTopic hobbitAvro() {
 		return TopicBuilder.name("hobbit-avro").partitions(15).replicas(3).build();
 	}
+
+	@Bean
+	NewTopic friendsAvro() {
+		return TopicBuilder.name("friends-avro").partitions(15).replicas(3).build();
+	}
 }

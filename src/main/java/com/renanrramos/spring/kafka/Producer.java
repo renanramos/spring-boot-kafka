@@ -31,4 +31,17 @@ public class Producer {
 						.blockLast();
 
 	}
+
+	@EventListener(ApplicationStartedEvent.class)
+	public void generateFriendsQuotes() {
+		faker = Faker.instance();
+		final Flux<Long> interval = Flux.interval(Duration.ofMillis(1_000));
+
+		final Flux<String> quotes = Flux.fromStream(Stream.generate(() -> faker.friends().quote()));
+
+		Flux.zip(interval, quotes)
+						.map(it -> kafkaTemplate.send("friends-avro", faker.random().nextInt(42), it.getT2()))
+						.blockLast();
+
+	}
 }
