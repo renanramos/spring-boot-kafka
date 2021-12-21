@@ -8,7 +8,7 @@ import org.springframework.kafka.annotation.EnableKafkaStreams;
 import org.springframework.kafka.config.TopicBuilder;
 
 @SpringBootApplication
-@EnableKafkaStreams
+//@EnableKafkaStreams
 public class SpringKafkaApplication {
 
 	public static void main(String[] args) {
@@ -16,7 +16,7 @@ public class SpringKafkaApplication {
 	}
 
 	@Bean
-	NewTopic counts() {
-		return TopicBuilder.name("streams-wordcount-output").partitions(6).replicas(3).build();
+	NewTopic hobbitAvro() {
+		return TopicBuilder.name("hobbit-avro").partitions(15).replicas(3).build();
 	}
 }

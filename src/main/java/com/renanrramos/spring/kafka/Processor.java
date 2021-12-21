@@ -9,25 +9,25 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
-@Component
-public class Processor {
+//@Component
+//public class Processor {
 
-	@Autowired
-	public void process(final StreamsBuilder streamsBuilder) {
+//	@Autowired
+//	public void process(final StreamsBuilder streamsBuilder) {
+//
+//		final Serde<Integer> integerSerde = Serdes.Integer();
+//		final Serde<String> stringSerde = Serdes.String();
+//		final Serde<Long> longSerde = Serdes.Long();
+//
+//		final KStream<Integer, String> textLines = streamsBuilder
+//						.stream("hobbit", Consumed.with(integerSerde, stringSerde));
+//
+//		final KTable<String, Long> wordCounts = textLines
+//						.flatMapValues(value -> Arrays.asList(value.toLowerCase().split("\\W+")))
+//						.groupBy((key, value) -> value, Grouped.with(stringSerde, stringSerde))
+//						.count(Materialized.as("counts"));
+//
+//		wordCounts.toStream().to("streams-wordcount-output", Produced.with(stringSerde, longSerde));
+//	}
 
-		final Serde<Integer> integerSerde = Serdes.Integer();
-		final Serde<String> stringSerde = Serdes.String();
-		final Serde<Long> longSerde = Serdes.Long();
-
-		final KStream<Integer, String> textLines = streamsBuilder
-						.stream("hobbit", Consumed.with(integerSerde, stringSerde));
-
-		final KTable<String, Long> wordCounts = textLines
-						.flatMapValues(value -> Arrays.asList(value.toLowerCase().split("\\W+")))
-						.groupBy((key, value) -> value, Grouped.with(stringSerde, stringSerde))
-						.count(Materialized.as("counts"));
-
-		wordCounts.toStream().to("streams-wordcount-output", Produced.with(stringSerde, longSerde));
-	}
-
-}
+//}

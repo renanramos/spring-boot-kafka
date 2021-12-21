@@ -27,7 +27,7 @@ public class Producer {
 		final Flux<String> quotes = Flux.fromStream(Stream.generate(() -> faker.hobbit().quote()));
 
 		Flux.zip(interval, quotes)
-						.map(it -> kafkaTemplate.send("hobbit", faker.random().nextInt(42), it.getT2()))
+						.map(it -> kafkaTemplate.send("hobbit-avro", faker.random().nextInt(42), it.getT2()))
 						.blockLast();
 
 	}
