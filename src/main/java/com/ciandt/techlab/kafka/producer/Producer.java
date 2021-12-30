@@ -1,7 +1,7 @@
-package com.renanrramos.spring.kafka.producer;
+package com.ciandt.techlab.kafka.producer;
 
 import com.github.javafaker.Faker;
-import com.renanrramos.spring.kafka.common.Constants;
+import com.ciandt.techlab.kafka.common.Constants;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.event.ApplicationStartedEvent;

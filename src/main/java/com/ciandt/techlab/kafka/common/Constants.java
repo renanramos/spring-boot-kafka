@@ -1,4 +1,4 @@
-package com.renanrramos.spring.kafka.common;
+package com.ciandt.techlab.kafka.common;
 
 public class Constants {
 

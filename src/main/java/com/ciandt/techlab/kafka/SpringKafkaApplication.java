@@ -1,6 +1,6 @@
-package com.renanrramos.spring.kafka;
+package com.ciandt.techlab.kafka;
 
-import com.renanrramos.spring.kafka.common.Constants;
+import com.ciandt.techlab.kafka.common.Constants;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

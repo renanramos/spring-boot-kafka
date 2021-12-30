@@ -1,4 +1,4 @@
-package com.renanrramos.spring.kafka.rest;
+package com.ciandt.techlab.kafka.rest;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.streams.KafkaStreams;

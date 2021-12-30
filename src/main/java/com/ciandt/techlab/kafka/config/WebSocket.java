@@ -1,6 +1,6 @@
-package com.renanrramos.spring.kafka.config;
+package com.ciandt.techlab.kafka.config;
 
-import com.renanrramos.spring.kafka.common.Constants;
+import com.ciandt.techlab.kafka.common.Constants;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;

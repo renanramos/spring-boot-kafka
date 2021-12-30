@@ -1,9 +1,9 @@
-package com.renanrramos.spring.kafka.consumer;
+package com.ciandt.techlab.kafka.consumer;
 
+import com.ciandt.techlab.kafka.common.Constants;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.renanrramos.spring.kafka.common.Constants;
 import lombok.AllArgsConstructor;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.messaging.simp.SimpMessagingTemplate;

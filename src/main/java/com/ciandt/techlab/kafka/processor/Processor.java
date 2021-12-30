@@ -1,6 +1,6 @@
-package com.renanrramos.spring.kafka.processor;
+package com.ciandt.techlab.kafka.processor;
 
-import com.renanrramos.spring.kafka.common.Constants;
+import com.ciandt.techlab.kafka.common.Constants;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;
