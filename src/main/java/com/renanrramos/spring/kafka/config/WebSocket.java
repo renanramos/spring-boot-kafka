@@ -1,5 +1,6 @@
 package com.renanrramos.spring.kafka.config;
 
+import com.renanrramos.spring.kafka.common.Constants;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
@@ -12,12 +13,12 @@ public class WebSocket implements WebSocketMessageBrokerConfigurer {
 
 	@Override
 	public void configureMessageBroker(MessageBrokerRegistry registry) {
-		registry.setApplicationDestinationPrefixes("/app");
-		registry.enableSimpleBroker("/topic");
+		registry.setApplicationDestinationPrefixes(Constants.APP_DESTINATION_PREFIXES);
+		registry.enableSimpleBroker(Constants.SIMPLE_BROKER);
 	}
 
 	@Override
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
-		registry.addEndpoint("/websocket").setAllowedOrigins("*");
+		registry.addEndpoint(Constants.PATH).setAllowedOrigins("*");
 	}
 }

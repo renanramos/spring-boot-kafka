@@ -1,5 +1,6 @@
-package com.renanrramos.spring.kafka;
+package com.renanrramos.spring.kafka.processor;
 
+import com.renanrramos.spring.kafka.common.Constants;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;
@@ -22,7 +23,7 @@ public class Processor {
 		final Serde<Long> longSerde = Serdes.Long();
 
 		final KStream<Integer, String> textLines = streamsBuilder
-						.stream("hobbit", Consumed.with(integerSerde, stringSerde));
+						.stream(Constants.HOBBIT_TOPIC, Consumed.with(integerSerde, stringSerde));
 
 		final KTable<String, Long> wordCounts = textLines
 						.flatMapValues(value -> Arrays.asList(value.toLowerCase().split("\\W+")))
