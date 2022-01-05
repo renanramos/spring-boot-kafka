@@ -17,15 +17,11 @@ public class HobbitConsumer extends Consumer<Integer, Hobbit> {
 		super(webSocket);
 	}
 
+	@Override
 	@KafkaListener(topics = Constants.HOBBIT_TOPIC, groupId = "group_hobbit")
-	public void consumer(final ConsumerRecord<Integer, Hobbit> record) {
+	protected void consumer(ConsumerRecord<Integer, Hobbit> record) {
 		log.info("Received from topic: {} | word: '{}' and value: {}", record.topic(), record.key(), record.value());
-
-		try {
-			execute(record, Constants.HOBBIT_TOPIC);
-		} catch (JsonProcessingException e) {
-			log.error(e.getMessage());
-		}
+		execute(record, Constants.HOBBIT_TOPIC);
 	}
 
 }

@@ -17,14 +17,11 @@ public class FriendsConsumer extends Consumer<Integer, Friends>{
 		super(webSocket);
 	}
 
+	@Override
 	@KafkaListener(topics = Constants.FRIENDS_TOPIC, groupId = "group_friends")
-	public void consumer(final ConsumerRecord<Integer, Friends> record) {
+	protected void consumer(ConsumerRecord<Integer, Friends> record) {
 		log.info("Received from topic: {} | word: '{}' and value: {}", record.topic(), record.key(), record.value());
-
-		try {
-			execute(record, Constants.FRIENDS_TOPIC);
-		} catch (JsonProcessingException e) {
-			log.error(e.getMessage());
-		}
+		execute(record, Constants.FRIENDS_TOPIC);
 	}
+
 }
