@@ -19,7 +19,7 @@ services:
       KAFKA_CLUSTERS_0_PROPERTIES_SASL_JAAS_CONFIG: 'org.apache.kafka.common.security.scram.ScramLoginModule required username="admin" password="password";'
 
   zookeeper:
-    image: confluentinc/cp-zookeeper:5.2.4
+    image: confluentinc/cp-zookeeper:latest
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
@@ -27,7 +27,7 @@ services:
       - 22181:2181
 
   kafka:
-    image: confluentinc/cp-kafka:5.2.4
+    image: confluentinc/cp-kafka:latest
     depends_on:
       - zookeeper
     ports:
@@ -44,7 +44,7 @@ services:
       KAFKA_JMX_OPTS: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=kafka -Dcom.sun.management.jmxremote.rmi.port=9997
 
   schemaregistry:
-    image: confluentinc/cp-schema-registry:5.2.4
+    image: confluentinc/cp-schema-registry:latest
     ports:
       - 8085:8085
     depends_on:

@@ -26,7 +26,7 @@ public class Producer {
 	@Async
 	@EventListener(ApplicationStartedEvent.class)
 	public void produce() {
-    final Flux<Long> interval = Flux.interval(Duration.ofMillis(3_000));
+    final Flux<Long> interval = Flux.interval(Duration.ofMillis(5_000));
 
 		final Flux<String> friendsQuotes = Flux.fromStream(Stream.generate(() -> faker.friends().quote()));
 		final Flux<String> hobbitQuotes = Flux.fromStream(Stream.generate(() -> faker.hobbit().quote()));

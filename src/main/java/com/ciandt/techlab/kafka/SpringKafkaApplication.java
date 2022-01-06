@@ -18,12 +18,12 @@ public class SpringKafkaApplication {
 
 	@Bean
 	NewTopic friendsAvro() {
-		return TopicBuilder.name(Constants.FRIENDS_TOPIC).partitions(15).replicas(3).build();
+		return TopicBuilder.name(Constants.FRIENDS_TOPIC).partitions(3).replicas(2).build();
 	}
 
 	@Bean
 	NewTopic hobbitAvro() {
-		return TopicBuilder.name(Constants.HOBBIT_TOPIC).partitions(15).replicas(3).build();
+		return TopicBuilder.name(Constants.HOBBIT_TOPIC).partitions(3).replicas(2).build();
 	}
 
 }
