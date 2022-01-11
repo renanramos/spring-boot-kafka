@@ -28,7 +28,7 @@ public class Processor {
 		final KTable<String, Long> wordCounts = textLines
 						.flatMapValues(value -> Arrays.asList(value.toLowerCase().split("\\W+")))
 						.groupBy((key, value) -> value, Grouped.with(stringSerde, stringSerde))
-						.count(Materialized.as("counts"));
+						.count(Materialized.as(Constants.COUNT));
 
 		wordCounts.toStream().to("streams-wordcount-output", Produced.with(stringSerde, longSerde));
 	}

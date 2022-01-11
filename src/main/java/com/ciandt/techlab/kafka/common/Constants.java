@@ -8,4 +8,5 @@ public class Constants {
 	public static final String APP_DESTINATION_PREFIXES = "/app";
 	public static final String SIMPLE_BROKER = "/topic";
 	public static final String PATH = "/websocket";
+	public static final String COUNT = "counts";
 }

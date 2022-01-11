@@ -1,5 +1,6 @@
 package com.ciandt.techlab.kafka.rest;
 
+import com.ciandt.techlab.kafka.common.Constants;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.streams.StoreQueryParameters;
 import org.apache.kafka.streams.state.QueryableStoreTypes;
@@ -20,7 +21,7 @@ public class RestKafkaService {
 
 		final ReadOnlyKeyValueStore<String, Long> counts =
 						factoryBean.getKafkaStreams()
-										.store(StoreQueryParameters.fromNameAndType("counts", QueryableStoreTypes.keyValueStore()));
+										.store(StoreQueryParameters.fromNameAndType(Constants.COUNT, QueryableStoreTypes.keyValueStore()));
 
 		return counts.get(word);
 	}

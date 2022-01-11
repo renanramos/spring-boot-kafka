@@ -1,6 +1,5 @@
 package com.ciandt.techlab.kafka.consumer;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.ciandt.techlab.kafka.common.Constants;
 import io.confluent.developer.avro.Friends;
 import lombok.extern.slf4j.Slf4j;
